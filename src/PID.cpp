@@ -46,6 +46,8 @@ void PID::UpdateError(double cte) {
 
     total_error += pow(cte, 2);
 
+    /**********************************************************************
+     * Used to tune up the hyper parameters.
     if (steps_since_last_twiddle == kTwiddleSteps) {
 
         std::cout << "Tuning up the parameter: " << tuner_idx << std::endl;
@@ -62,6 +64,7 @@ void PID::UpdateError(double cte) {
         steps_since_last_twiddle = 0;
         total_error = 0;
     }
+    ***********************************************************************/
     ++steps_since_last_twiddle;
     ++step;
 }

@@ -33,8 +33,13 @@ int main()
   uWS::Hub h;
 
   PID pid;
-  pid.Init(0.1, 0.001, 1.0);
-  // TODO: Initialize the pid variable.
+  // Initial set of the parameters, which enable the car to
+  // go through the complete track:
+  // pid.Init(0.1, 0.001, 1.0);
+  //
+  // The parameters tuned up through the tune up algorithm.
+  // Kp: 0.153802; Kd: 1.15846; Ki: 0.000846829
+  pid.Init(0.153802, 0.000846829, 1.15846);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.

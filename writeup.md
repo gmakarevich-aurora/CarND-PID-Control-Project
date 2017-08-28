@@ -21,4 +21,9 @@ Kp = 0.1  Ki = 0.001 Kd = 1.0
 The choice was done through manual experiments with several different combinations.
 This combination enabled the car to go through the complete track. After that, the parameters
 were tuned up using the algorithm described in the lectures. At each iteration I have run the parameters
-over 2000 frames (large enough to go through the complete track at least once). I have run the tuneup procedure for
+over 2000 frames (large enough to go through the complete track at least once). I have run the tuneup procedure
+for 250 iterations, recording the parameters producing the smallest error.
+
+The final set of the parameters was:
+
+Kp = 0.153802  Kd = 1.15846  Ki= 0.000846829
