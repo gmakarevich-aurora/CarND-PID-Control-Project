@@ -90,7 +90,7 @@ bool PID::ParamTuner::tuneUp(double error, double best_error) {
         state = DECREASED;
         return false;
     case DECREASED:
-        if (error > best_error) {
+        if (error < best_error) {
             koefficient_diff *= 1.1;
         } else {
             *koefficient += koefficient_diff;
